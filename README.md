@@ -1,1 +1,1 @@
-# SpartanSecurity-
+# Spartan Security
