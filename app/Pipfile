@@ -1,0 +1,17 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+flask = "*"
+botocore = "*"
+boto3 = "*"
+pandas = "~=0.22.0"
+numpy = "*"
+tsfresh = "*"
+
+[requires]
+python_version = "3.7"
