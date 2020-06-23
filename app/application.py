@@ -6,16 +6,33 @@ import json
 application = app = Flask(__name__)
 manager = ModelManager()
 
+@app.route('/')
+def home():
+    return render_template('home.html')
 
-@app.route("/", methods=['GET', 'POST'])
-def index():
-    return render_template("index.html")
+@app.route('/predanalytics')
+def predanalytics():
+    return render_template('predanalytics.html')
 
+@app.route("/desanalytics", methods=['GET', 'POST'])
+def desanalytics():
+    return render_template("desanalytics.html")
 
-@app.route("/byneighborhood", methods=['GET', 'POST'])
-def crimesbyneighborhood():
-    return render_template("neighborhood.html")
+# @app.route("/byneighborhood", methods=['GET', 'POST'])
+# def crimesbyneighborhood():
+#     return render_template("neighborhood.html")
 
+@app.route('/newsfeed')
+def newsfeed():
+    return render_template('newsfeed.html')
+
+@app.route('/safety')
+def safety():
+    return render_template('safety.html')
+
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
 
 # api to upload data set file
 @app.route("/api/upload", methods=['POST'])
