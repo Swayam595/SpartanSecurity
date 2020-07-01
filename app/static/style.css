@@ -89,11 +89,11 @@ html, body, #map {
   }
   #explorebtn {
     position: absolute;
-    top: 50%;
+    top: 61%;
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    background-color:#343A40;
+    background-color:black;
     color: white;
     font-size: 14px;
     padding: 10px 20px;
@@ -101,7 +101,6 @@ html, body, #map {
     cursor: pointer;
     border-radius: 5px;
     text-align: center;
-    top: 60%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
@@ -112,11 +111,18 @@ html, body, #map {
     top: 40%;
     text-align: center;
     font-size: 300%;
+    text-shadow: 0px 0px 3px #000, -1px -1px #000, 1px 1px #000;
+    font-weight: bold;
+
+
   }
   #column {
     float: left;
     width: 33.33%;
     padding: 50px;
+    position: relative;
+  text-align: center;
+  color: black;
   }
   
   /* Clearfix (clear floats) */
@@ -124,4 +130,14 @@ html, body, #map {
     content: "";
     clear: both;
     display: table;
+  }
+  #centered {
+    color:white ;
+    font-weight: bold;
+    font-size: 150%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 0px 0px 3px #000, -1px -1px #000, 1px 1px #000;
   }
