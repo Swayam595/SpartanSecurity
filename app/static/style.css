@@ -35,7 +35,8 @@ html, body, #map {
     opacity: 0.7;
 }
 #panel1 {
-    background-image: url(../static/images/homgbg.webp);
+    /* background-image: url("https://ak.picdn.net/shutterstock/videos/11807978/thumb/12.jpg"); */
+    background-image: url(../static/images/hmpg.jpg);
     filter: blur(8px);
     -webkit-filter: blur(8px);
     height: 100%;
@@ -58,7 +59,7 @@ html, body, #map {
   }
 #panel3 {
     height:100px;
-    background-image: url("https://www.cpomagazine.com/wp-content/uploads/2019/09/the-dangerous-implications-of-amazon-ring-creating-a-nationwide-surveillance-network-with-law-enforcement_1500.jpg");
+    background-image: url(../static/images/hmpg.jpg);
     font-size:36px"
   }
 #panel4 {
@@ -67,7 +68,7 @@ html, body, #map {
   }
 #panel5 {
     height:10%;
-    background-image: url("https://www.cpomagazine.com/wp-content/uploads/2019/09/the-dangerous-implications-of-amazon-ring-creating-a-nationwide-surveillance-network-with-law-enforcement_1500.jpg");
+    background-image: url(../static/images/hmpg.jpg);
     padding-left:500px;
   }
 #ftext {
@@ -104,4 +105,23 @@ html, body, #map {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
+  }
+  #newsfeed {
+    color:white;
+    left: 50%;
+    top: 40%;
+    text-align: center;
+    font-size: 300%;
+  }
+  #column {
+    float: left;
+    width: 33.33%;
+    padding: 50px;
+  }
+  
+  /* Clearfix (clear floats) */
+  #row::after {
+    content: "";
+    clear: both;
+    display: table;
   }
