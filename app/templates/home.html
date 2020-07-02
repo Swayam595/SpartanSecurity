@@ -16,6 +16,11 @@
         <h1 id="text">Collect.Analyze.Prevent</h1>
     </div>
     <div><button id="explorebtn">Explore</button> </div>
+    <script type="text/javascript">
+        document.getElementById("explorebtn").onclick = function () {
+            location.href = "/"
+        };
+    </script>
 
     <div id="panel2">
         <div id="tagline">Spartan Security Provides a Cutting Edge Solution for Crime Prevention with Time Seires
@@ -35,7 +40,12 @@
             the number and types of crimes.
             <br>
             <br>
-            <button style="margin-left: 25%;">Find Out More</button>
+            <button id="findmore"style="margin-left: 25%;">Find Out More</button>
+            <script type="text/javascript">
+                document.getElementById("findmore").onclick = function () {
+                    location.href = "/desanalytics"
+                };
+            </script>
         </p>
 
     </div>
