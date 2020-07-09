@@ -22,14 +22,14 @@ def hotspots():
     return render_template('hotspots.html')
 
 
-@app.route('/predanalytics')
-def predanalytics():
-    return render_template('predanalytics.html')
+@app.route('/crimesbyneighborhood')
+def neighborhood_analytics():
+    return render_template('neighborhood_analytics.html')
 
 
-@app.route("/desanalytics", methods=['GET', 'POST'])
-def desanalytics():
-    return render_template("desanalytics.html")
+@app.route("/crimesbydistrict", methods=['GET', 'POST'])
+def district_analytics():
+    return render_template("district_analytics.html")
 
 
 @app.route('/newsfeed')
