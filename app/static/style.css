@@ -7,8 +7,7 @@ html, body, #map {
 #mapid{
     height: 600px;
     width:100%;
-    margin-top:10px;
-
+    margin-top:0px;
 }
 .info,.population_info {
     padding: 6px 8px;
@@ -44,7 +43,7 @@ html, body, #map {
     background-repeat: no-repeat;
     background-size: cover;
 }
-        
+
 #panel2 {
     height:500px;
     background-color:lightgray;
@@ -74,7 +73,7 @@ html, body, #map {
 #ftext {
     color:white;
     font-weight: 200;
-    position:relative; 
+    position:relative;
     top:50%;
 }
 #text {
@@ -124,7 +123,7 @@ html, body, #map {
   text-align: center;
   color: black;
   }
-  
+
   /* Clearfix (clear floats) */
   #row::after {
     content: "";

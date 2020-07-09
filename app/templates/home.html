@@ -1,26 +1,16 @@
 {% extends 'navbar.html' %}
-
-{% block content %}
-<!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
-    <link rel="stylesheet" href="static/style.css" />
-</head>
-
-<body>
+{% block bodycontent %}
     <div id="panel1"></div>
     <div>
         <h1 id="text">Collect.Analyze.Prevent</h1>
     </div>
     <div><button id="explorebtn">Explore</button> </div>
     <script type="text/javascript">
-        document.getElementById("explorebtn").onclick = function () {
-            location.href = "/"
-        };
+            document.getElementById("explorebtn").onclick = function () {
+                location.href = "/"
+            };
     </script>
+
 
     <div id="panel2">
         <div id="tagline">Spartan Security Provides a Cutting Edge Solution for Crime Prevention with Time Seires
@@ -31,21 +21,21 @@
             <br>
             time, nature of crime, as well as census data, we are able
             <br>
-            to understand the impact of income disparity and 
+            to understand the impact of income disparity and
             <br>
-            demographics on crime. With predictive analysis and  
+            demographics on crime. With predictive analysis and
             <br>
-            machine learning models we are able to predict both 
+            machine learning models we are able to predict both
             <br>
             the number and types of crimes.
             <br>
             <br>
             <button id="findmore"style="margin-left: 25%;">Find Out More</button>
             <script type="text/javascript">
-                document.getElementById("findmore").onclick = function () {
-                    location.href = "/desanalytics"
-                };
-            </script>
+                    document.getElementById("findmore").onclick = function () {
+                        location.href = "/desanalytics"
+                    };
+                </script>
         </p>
 
     </div>
@@ -55,7 +45,7 @@
         <div id="row">
             <div id="column">
                 <a
-                    href="https://www.nbcwashington.com/news/local/is-crime-reduction-worth-aerial-surveillance-baltimore-board-says-yes/2261090/">
+                        href="https://www.nbcwashington.com/news/local/is-crime-reduction-worth-aerial-surveillance-baltimore-board-says-yes/2261090/">
                     <img src='../static/images/news1.png' alt="Snow" style="width:100%;height: 50%;">
                     <div id="centered">Is Crime Reduction Worth Aerial Surveillance
                     </div>
@@ -78,8 +68,4 @@
     <div id="panel5">
         <footer id='ftext'>&copy; 2020 Spartan Security. All Rights Reserved.</footer>
     </div>
-</body>
-
-</html>
-
 {% endblock  %}

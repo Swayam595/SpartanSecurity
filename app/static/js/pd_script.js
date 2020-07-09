@@ -1,13 +1,17 @@
 var geojson;
-var map = L.map('mapid',{zoomControl:false}).setView([39.2904, -76.6122], 11.50);
-L.tileLayer('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png').addTo(map);
-$.getJSON('static/js/police_district.json',function (data) {
+
+var map = L.map('mapid',{zoomControl:false}).setView([39.2904, -76.6122], 10.51);
+//L.tileLayer('http://{s}.basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}.png').addTo(map);
+//L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png').addTo(map);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+$.getJSON('static/json/police_district.json',function (data) {
        geojson = L.geoJson(data,{style:polystyle,onEachFeature: onEachFeature}).addTo(map);
 });
 
 function getColor(d) {
     return d > 44000 ? '#800026' :
-               d > 42500  ? '#BD0026' :
+                   d > 42500  ? '#BD0026' :
                d > 38500  ? '#E31A1C' :
                d > 34500  ? '#FC4E2A' :
                d > 28500   ? '#FD8D3C' :
@@ -30,15 +34,15 @@ function highlightFeature(e) {
     var layer = e.target;
 
     layer.setStyle({
-        weight: 4,
-        color: '#666',
+//        weight: 4,
+//        color: '#666',
         dashArray: '',
         fillOpacity: 0.7
     });
 
-    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-        layer.bringToFront();
-    }
+//    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+//        layer.bringToFront();
+//    }
 
     info.update(layer.feature.properties);
 }
@@ -75,7 +79,7 @@ info.update = function (props) {
         : 'Hover over a state');
 };
 
-info.addTo(map);
+//info.addTo(map);
 
 
 var legend = L.control({position: 'bottomright'});
@@ -97,3 +101,17 @@ legend.onAdd = function (map) {
 };
 
 legend.addTo(map);
+
+
+$.getJSON("static/json/homicides.json",function(data){
+    var crimes = L.geoJson(data,{
+      pointToLayer: function(feature,latlng){
+        var marker = L.marker(latlng);
+        marker.bindPopup(feature.properties.Location + '<br/>' + feature.properties.District);
+        return marker;
+      }
+    });
+    var clusters = L.markerClusterGroup({showCoverageOnHover: false });
+    clusters.addLayer(crimes);
+    map.addLayer(clusters);
+ });

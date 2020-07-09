@@ -1,7 +1,7 @@
 var geojson;
 var map = L.map('mapid',{zoomControl:false}).setView([39.2904, -76.6122], 11.50);
-L.tileLayer('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png').addTo(map);
-$.getJSON('static/js/neighborhood.json',function (data) {
+L.tileLayer('http://{s}.basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}.png').addTo(map);
+$.getJSON('static/json/neighborhood.json',function (data) {
        geojson = L.geoJson(data,{style:polystyle,onEachFeature: onEachFeature}).addTo(map);
 });
 
@@ -77,7 +77,7 @@ info.update = function (props) {
         : 'Hover over a state');
 };
 
-info.addTo(map);
+//info.addTo(map);
 
 
 var legend = L.control({position: 'bottomright'});
