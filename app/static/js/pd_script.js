@@ -110,10 +110,27 @@ legend.addTo(map);
 
 
 //var data_url =  "";
-//var options = L.control({position:bottomleft});
-//options.onAdd = function(map){
+var crime_filters = L.control({position: 'bottomleft'});
+
+crime_filters.onAdd = function (map) {
+    var div = L.DomUtil.create('div', 'crime_filters');
+    var labels =['Homicides','Shootings','Robbery - Street', 'Robbery - Commercial'];
+    var ids = ['homicide','shooting','rob_st','rob_com'];
+    var i=0;
+//    div.innerHTML = '<form>';
 //
-//}
+//    while(i < labels.length && i < ids.length)
+//        div.innerHTML += "</br><input type='checkbox' id="+ ids[i] +"><label>&nbsp"+ labels[i]+"<label>";
+//        i++;
+//    }
+//
+//    div.innerHTML+= '</form>';
+
+    div.innerHTML = "<form></br><input type='checkbox' id='homicide'><label>&nbsp Homicide</label></br><input type='checkbox' id='shooting'><label>&nbsp Shootings</label></br><input type='checkbox' id='rob_com'><label>&nbsp Robbery- Commercial</label></br><input type='checkbox' id='rob_st'><label>&nbsp Robbery - Street</label></form>";
+    return div;
+};
+
+crime_filters.addTo(map);
 
 
 $.getJSON("static/json/homicides.json",function(data){

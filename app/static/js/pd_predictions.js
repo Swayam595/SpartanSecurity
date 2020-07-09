@@ -32,3 +32,30 @@ title.onAdd = function (map) {
 };
 
 title.addTo(map);
+
+function getColor(d) {
+    return d > 44000 ? '#800026' :
+              d > 42500  ? '#BD0026' :
+               d > 38500  ? '#E31A1C' :
+               d > 34500  ? '#FC4E2A' :
+               d > 28500   ? '#FD8D3C' :
+               d > 24500   ? '#FEB24C' :
+               d > 20500   ? '#FED976' :
+                          '#FFEDA0';
+}
+
+var legend = L.control({position: 'bottomright'});
+legend.onAdd = function (map) {
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [0,20500, 24500, 28500, 34500, 38500, 42500, 44000],
+        labels = ['a'];
+    // loop through our density intervals and generate a label with a colored square for each interval
+    for (var i = 0; i < grades.length; i++) {
+        div.innerHTML +=
+            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+    }
+
+    return div;
+};
+legend.addTo(map);

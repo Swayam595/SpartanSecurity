@@ -24,6 +24,13 @@ html, body, #map {
    border-radius: 5px;
    opacity: 0.9
 }
+.crime_filters{
+    margin-bottom: 60%!important;
+}
+.crime_filters label {
+    color: #ffffff;
+    font-size: 20px;
+}
 .info,.population_info {
     padding: 6px 8px;
     font: 14px/16px Arial, Helvetica, sans-serif;
