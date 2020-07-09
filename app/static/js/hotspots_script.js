@@ -1,7 +1,8 @@
-var map = L.map('mapid',{zoomControl:false}).setView([39.2904, -76.6122], 10.500);
+var map = L.map('mapid',{zoomControl:false}).setView([39.2980, -76.6121], 11.50);
 L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png').addTo(map);
 //L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 //L.tileLayer('http://{s}.basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}.png').addTo(map);
+//L.tileLayer('http://tiles.mapc.org/basemap/{z}/{x}/{y}.png').addTo(map);
 
 //
 $.getJSON('static/json/police_district.json',function (data) {
