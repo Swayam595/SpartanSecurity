@@ -4,10 +4,25 @@ body {
 html, body, #map {
   height: 100%;
 }
+.map-container{
+}
 #mapid{
-    height: 600px;
+    position:absolute;
+    height:680px;
     width:100%;
-    margin-top:0px;
+}
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    background: #1A1A1A;
+    color: #ffffff;
+    opacity:0.9;
+}
+.title{
+    color: black;
+   font-size: 17px;
+   background: white;
+   padding: 5px 14px;
+   border-radius: 5px;
+   opacity: 0.9
 }
 .info,.population_info {
     padding: 6px 8px;

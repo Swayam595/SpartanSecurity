@@ -18,8 +18,13 @@ def intersection():
 
 
 @app.route('/hotspots')
-def hotspots():
+def hot_spots():
     return render_template('hotspots.html')
+
+
+@app.route('/predanalytics')
+def predictive_analytics():
+    return render_template('predictive_analytics.html')
 
 
 @app.route('/crimesbyneighborhood')
