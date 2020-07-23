@@ -175,3 +175,21 @@ html, body, #map {
     height: 70%;
     padding-left:100px;
   }
+  #results {
+      position: relative;
+      top: 0;
+      left: 0;
+  }
+  #img1 {
+  position: relative;
+  height: 50%;
+  top: 0;
+  left: 0;
+  border: 1px solid #000000;
+  }
+#img2 {
+  position: absolute;
+  top: 10px;
+  left: 15%;
+  border: 1px solid #000000;
+}
