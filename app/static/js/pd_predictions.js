@@ -1,4 +1,4 @@
-var map = L.map('mapid',{zoomControl:false}).setView([39.2980, -76.6121], 11.50);
+var map = L.map('mapid',{zoomControl:false}).setView([39.3110, -76.6121], 11.50);
 L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png').addTo(map);
 
 $.getJSON('static/json/pd_predictions.json',function (data) {
@@ -23,16 +23,13 @@ $.getJSON('static/json/pd_predictions.json',function (data) {
 });
 
 var title = L.control({position: 'topleft'});
-
 title.onAdd = function (map) {
-
     var div = L.DomUtil.create('div', 'title');
     div.innerHTML += "<strong>Number of Crimes Predicted for Next week</strong>";
     return div;
 };
 
 title.addTo(map);
-
 function getColor(d) {
     return d > 44000 ? '#800026' :
               d > 42500  ? '#BD0026' :

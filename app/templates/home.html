@@ -1,71 +1,70 @@
 {% extends 'navbar.html' %}
 {% block bodycontent %}
-    <div id="panel1"></div>
-    <div>
-        <h1 id="text">Collect.Analyze.Prevent</h1>
-    </div>
-    <div><button id="explorebtn">Explore</button> </div>
-    <script type="text/javascript">
+<div id="panel1"></div>
+<div>
+    <h1 id="text">Collect.Analyze.Prevent</h1>
+</div>
+<div><button id="explorebtn">Explore</button> </div>
+<script type="text/javascript">
             document.getElementById("explorebtn").onclick = function () {
                 location.href = "/"
             };
     </script>
 
 
-    <div id="panel2">
-        <div id="tagline">Spartan Security Provides a Cutting Edge Solution for Crime Prevention with Time Seires
-            Prediction</div>
-        <img id="mainpic" src="../static/images/mainpic.png">
-        <p id="coretxt">
-            With the use of data points such as the crime location,
-            <br>
-            time, nature of crime, as well as census data, we are able
-            <br>
-            to understand the impact of income disparity and
-            <br>
-            demographics on crime. With predictive analysis and
-            <br>
-            machine learning models we are able to predict both
-            <br>
-            the number and types of crimes.
-            <br>
-            <br>
-            <button id="findmore"style="margin-left: 25%;">Find Out More</button>
-            <script type="text/javascript">
+<div id="panel2">
+    <div id="tagline">Spartan Security Provides a Cutting Edge Solution for Crime Prevention with Time Seires
+        Prediction</div>
+    <img id="mainpic" src="../static/images/mainpic.png">
+    <p id="coretxt">
+        With the use of data points such as the crime location,
+        <br>
+        time, nature of crime, as well as census data, we are able
+        <br>
+        to understand the impact of income disparity and
+        <br>
+        demographics on crime. With predictive analysis and
+        <br>
+        machine learning models we are able to predict both
+        <br>
+        the number and types of crimes.
+        <br>
+        <br>
+        <button id="findmore"style="margin-left: 25%;">Find Out More</button>
+        <script type="text/javascript">
                     document.getElementById("findmore").onclick = function () {
                         location.href = "/predanalytics"
                     };
                 </script>
-        </p>
+    </p>
 
-    </div>
-    <div id="panel3"></div>
-    <div id="panel4">
-        <div id='newsfeed'>News Feed</div>
-        <div id="row">
-            <div id="column">
-                <a
-                        href="https://www.nbcwashington.com/news/local/is-crime-reduction-worth-aerial-surveillance-baltimore-board-says-yes/2261090/">
-                    <img src='../static/images/news1.png' alt="Snow" style="width:100%;height: 50%;">
-                    <div id="centered">Is Crime Reduction Worth Aerial Surveillance
-                    </div>
-                </a>
-            </div>
-            <div id="column">
-                <a href="https://homicides.news.baltimoresun.com/">
-                    <img src="../static/images/news1.png" alt="Forest" style="width:100%;height: 50%;">
-                    <div id="centered">Baltimore Homicides </div>
-                </a>
-            </div>
-            <div id="column">
-                <a href="https://thecrimereport.org/2020/06/30/despite-pandemic-baltimore-murder-total-is-rising/">
-                    <img src="../static/images/news1.png" alt="Mountains" style="width:100%;height: 50%;">
-                    <div id="centered">Despite Pandemic, Baltimore Murder Total is Rising</div>
-                </a>
-            </div>
+</div>
+<div id="panel3"></div>
+<div id="panel4">
+    <div id='newsfeed'>News Feed</div>
+    <div id="row">
+        <div id="column">
+            <a href="https://www.nbcwashington.com/news/local/is-crime-reduction-worth-aerial-surveillance-baltimore-board-says-yes/2261090/">
+                <img src='../static/images/news1.png' alt="Snow" style="width:100%;height: 50%;">
+                <div id="centered">Is Crime Reduction Worth Aerial Surveillance
+                </div>
+            </a>
+        </div>
+        <div id="column">
+            <a href="https://homicides.news.baltimoresun.com/">
+                <img src="../static/images/news1.png" alt="Forest" style="width:100%;height: 50%;">
+                <div id="centered">Baltimore Homicides </div>
+            </a>
+        </div>
+        <div id="column">
+            <a href="https://thecrimereport.org/2020/06/30/despite-pandemic-baltimore-murder-total-is-rising/">
+                <img src="../static/images/news1.png" alt="Mountains" style="width:100%;height: 50%;">
+                <div id="centered">Despite Pandemic, Baltimore Murder Total is Rising</div>
+            </a>
         </div>
     </div>
-    <div id="panel5">
-        <footer id='ftext'>&copy; 2020 Spartan Security. All Rights Reserved.</footer>
-    </div>
+</div>
+<div id="panel5">
+    <footer id='ftext'>&copy; 2020 Spartan Security. All Rights Reserved.</footer>
+</div>
 {% endblock  %}

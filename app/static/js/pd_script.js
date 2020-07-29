@@ -34,63 +34,6 @@ function getColor(d) {
                d > 20500   ? '#FED976' :
                           '#FFEDA0';
 }
-//function polystyle(feature) {
-//    return {
-//        fillColor: getColor(feature.properties.noOfCrimes),
-//        weight: 2,
-//        opacity: 1,
-//        color: 'white',
-//        dashArray: '3',
-//        fillOpacity: 0.7
-//    };
-//}
-//
-//function highlightFeature(e) {
-//    var layer = e.target;
-//    layer.setStyle({
-////        weight: 4,
-////        color: '#666',
-//        dashArray: '',
-//        fillOpacity: 0.7
-//    });
-//
-//    info.update(layer.feature.properties);
-//}
-
-//function resetHighlight(e) {
-//    geojson.resetStyle(e.target);
-//    info.update();
-//}
-//
-//function zoomToFeature(e) {
-//    map.fitBounds(e.target.getBounds());
-//}
-//
-//function onEachFeature(feature, layer) {
-//    layer.on({
-//        mouseover: highlightFeature,
-//        mouseout: resetHighlight,
-//        click: zoomToFeature
-//    });
-//}
-
-//var info = L.control();
-//
-//info.onAdd = function (map) {
-//    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-//    this.update();
-//    return this._div;
-//};
-//
-//// method that we will use to update the control based on feature properties passed
-//info.update = function (props) {
-//    this._div.innerHTML = '<h4>Baltimore Number Of Crimes by Police Districts </h4>' +  (props ?
-//        '<b>' + props.dist_name + '</b><br />' + props.noOfCrimes
-//        : 'Hover over a state');
-//};
-//
-////info.addTo(map);
-
 
 var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
@@ -108,6 +51,16 @@ legend.onAdd = function (map) {
 };
 legend.addTo(map);
 
+var title = L.control({position: 'topleft'});
+
+title.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'title');
+    div.innerHTML += "<strong>Number of Crimes in Baltimore Police Districts</strong>";
+    return div;
+};
+
+title.addTo(map);
 
 //var data_url =  "";
 var crime_filters = L.control({position: 'bottomleft'});

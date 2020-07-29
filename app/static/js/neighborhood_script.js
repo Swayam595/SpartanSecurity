@@ -55,12 +55,12 @@ function zoomToFeature(e) {
 function onEachFeature(feature, layer) {
     layer.on({
         mouseover: highlightFeature,
-        mouseout: resetHighlight,
-        click: zoomToFeature
+        mouseout: resetHighlight
+//        click: zoomToFeature
     });
 }
 //
-var info = L.control();
+var info = L.control({position:'topleft'});
 
 info.onAdd = function (map) {
     this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
@@ -70,15 +70,14 @@ info.onAdd = function (map) {
 
 // method that we will use to update the control based on feature properties passed
 info.update = function (props) {
-    this._div.innerHTML = '<h4>Baltimore Number Of Crimes</h4>' +  (props ?
+    this._div.innerHTML = '<h4>Baltimore Neighborhood </h4><b>Number of Crimes</b><br/>' +  (props ?
         '<b>' + props.Name + '</b><br />' + props.NoOfCrimes + '</b><br />'+
         '<br><h4>Population density</h4>'+
         '<b>' + props.Name + '</b><br />' + props.Pop_dens
         : 'Hover over a state');
 };
 
-//info.addTo(map);
-
+info.addTo(map);
 
 var legend = L.control({position: 'bottomright'});
 

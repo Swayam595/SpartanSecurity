@@ -1,0 +1,58 @@
+{% extends 'navbar.html' %}
+
+{% block scriptcontent %}
+    <link rel="stylesheet" href="static/css/style.css"/>
+{% endblock %}
+{% block bodycontent %}
+
+<div class="container-fluid">
+    <div class="row banner">
+        <h1 class="banner-text">Collect. Analyze. Prevent</h1>
+        <button class="btn explore-btn">Explore</button>
+    </div>
+    <div class="about row px-5 my-5">
+        <div class="col">
+            <img class="home-map-img" src="../static/images/mainpic.png">
+        </div>
+        <div class="col">
+            <h2 class="about-text">
+                Spartan Security Provides a Cutting Edge Solution for Crime Prevention with Time Seires
+                Prediction
+            </h2>
+            <p class="about-desc">With the use of data points such as the crime location,
+                time, nature of crime, as well as census data, we are able
+                to understand the impact of income disparity and
+                demographics on crime. With predictive analysis and
+                machine learning models we are able to predict both
+                the number and types of crimes.</p>
+            <a href="/predanalytics"><button class="btn btn-dark my-4">Find Out More</button></a>
+        </div>
+    </div>
+    <div class="row news-banner-container">
+        <div class="row news-banner">
+            <h2 class="news-banner-text text-center">News Feed</h2>
+            <div class="news-content row w-100">
+                <div class="col">
+                    Is Crime Reduction Worth Aerial Surveillance
+                </div>
+                <div class="col">
+                    Baltimore Homicides
+                </div>
+                <div class="col">
+                    Despite Pandemic, Baltimore Murder Total is Rising
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="row py-5 px-3">
+        &copy; 2020 Spartan Security. All Rights Reserved.
+    </footer>
+</div>
+<script type="text/javascript">
+$(window).scroll(function(){
+    $(".banner-text").css("opacity", 1 - $(window).scrollTop() / 250);
+    $(".explore-btn").css("opacity", 1 - $(window).scrollTop() / 250);
+});
+
+</script>
+{% endblock %}

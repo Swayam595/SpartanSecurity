@@ -22,14 +22,24 @@ function polystyle(feature) {
         fillOpacity: 0.7
     };
 }
+
+function nstyle(feature){
+    return {
+        weight: 2,
+        opacity: 1,
+        color: 'grey',
+        dashArray: '3',
+        fillOpacity: 0
+    };
+}
 function highlightFeature(e) {
     var layer = e.target;
 
     layer.setStyle({
-        weight: 4,
-        color: '#666',
-        dashArray: '',
-        fillOpacity: 0.7
+        weight: 2,
+//        color: '#666',
+        dashArray: ''
+//        fillOpacity: 0.7
     });
 
     if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
@@ -67,7 +77,7 @@ $.getJSON('static/json/police_district.json',function (data) {
 
 // get the neighborhood data
 $.getJSON('static/json/neighborhood.json',function (data) {
-       geojson2 = L.geoJson(data,{onEachFeature: onEachFeature}).addTo(map);
+       geojson2 = L.geoJson(data,{style:nstyle,onEachFeature: onEachFeature}).addTo(map);
 });
 
 
@@ -106,7 +116,7 @@ $.getJSON('static/json/neighborhood.json',function (data) {
                      var name = n_feature.properties.Name ;
 
                      // change the name of neighborhood here
-                     if(name == 'Mount Washington'){
+                     if(name == 'Barclay'){
                      var poly2 = turf.polygon(n_feature.geometry.coordinates[0]);
 
                      var intersect = turf.intersect(poly1, poly2);
@@ -115,12 +125,12 @@ $.getJSON('static/json/neighborhood.json',function (data) {
                      console.log(intersect);
 
                      // use when geometry consist of one polygon
-                     console.log(turf.area(turf.polygon(intersect.geometry.coordinates)));
+//                     console.log(turf.area(turf.polygon(intersect.geometry.coordinates)));
 
                      // use when geometry consist of multipolygon
 
-                        //var a1 = turf.area(turf.polygon(intersect.geometry.coordinates[0]));
-                        //var a2 = turf.area(turf.polygon(intersect.geometry.coordinates[1]));
+//                        var a1 = turf.area(turf.polygon(intersect.geometry.coordinates[0]));
+//                        var a2 = turf.area(turf.polygon(intersect.geometry.coordinates[1]));
 
 
                      // use when geometry consist of 4 polygons
@@ -130,12 +140,12 @@ $.getJSON('static/json/neighborhood.json',function (data) {
                         //var a3 = turf.area(turf.polygon(intersect.geometry.geometries[8].coordinates));
                         //var a4 = turf.area(turf.polygon(intersect.geometry.geometries[8].coordinates));
 
-                        //console.log(a1+a2+a3+a4);
+//                        console.log(a1+a2);
 
 
                       // highlight the overlapping polygon
                       if(intersect != null){
-                          L.geoJson(intersect,{style:{color:'black', fillColor:'black'}}).addTo(map);
+                          L.geoJson(intersect,{style:{color:'black', fillColor:'blue',opacity:0, weight:5}}).addTo(map);
                       }
 
                      }

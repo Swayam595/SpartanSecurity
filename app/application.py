@@ -6,20 +6,17 @@ import json
 application = app = Flask(__name__)
 # manager = ModelManager()
 
-
 @app.route('/')
-def home():
-    return render_template('home.html')
-
+def newhome():
+    return render_template('home2.html')
 
 @app.route('/intersection')
 def intersection():
     return render_template('intersection.html')
 
-
-@app.route('/hotspots')
-def hot_spots():
-    return render_template('hotspots.html')
+# @app.route('/hotspots')
+# def hot_spots():
+#     return render_template('hotspots.html')
 
 
 @app.route('/predanalytics')
