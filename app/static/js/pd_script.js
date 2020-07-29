@@ -53,46 +53,138 @@ var title = L.control({position: 'topleft'});
 title.onAdd = function (map) {
 
     var div = L.DomUtil.create('div', 'title');
-    div.innerHTML += "<strong>Number of Crimes in Baltimore Police Districts</strong>";
+    div.innerHTML += "<strong>Total Number of Crimes in Baltimore Police Districts</strong>";
     return div;
 };
 
 title.addTo(map);
 
-//var data_url =  "";
-var crime_filters = L.control({position: 'bottomleft'});
-
-crime_filters.onAdd = function (map) {
-    var div = L.DomUtil.create('div', 'crime_filters');
+/*Filters for Crime type*/
+var crime_filters_div = L.control({position: 'bottomleft'});
+crime_filters_div.onAdd = function (map) {
+    var div = L.DomUtil.create('form', 'crime_filters');
     var labels =['Homicides','Shootings','Robbery - Street', 'Robbery - Commercial'];
-    var ids = ['homicide','shooting','rob_st','rob_com'];
-    var i=0;
-//    div.innerHTML = '<form>';
-//
-//    while(i < labels.length && i < ids.length)
-//        div.innerHTML += "</br><input type='checkbox' id="+ ids[i] +"><label>&nbsp"+ labels[i]+"<label>";
-//        i++;
-//    }
-//
-//    div.innerHTML+= '</form>';
+    var ids = ['Homicide','Shooting','StreetRobbery','CommercialRobbery'];
 
-    div.innerHTML = "<form></br><input type='checkbox' id='homicide'><label>&nbsp Homicide</label></br><input type='checkbox' id='shooting'><label>&nbsp Shootings</label></br><input type='checkbox' id='rob_com'><label>&nbsp Robbery- Commercial</label></br><input type='checkbox' id='rob_st'><label>&nbsp Robbery - Street</label></form>";
+    for(var i=0; i< labels.length && i < ids.length; i++){
+        div.innerHTML += "</br><input type='checkbox' id="+ ids[i] +" onchange='crime_type_filter(this.id)'><label>&nbsp"+
+        labels[i]+"<label>";
+    }
+
     return div;
 };
 
-crime_filters.addTo(map);
+crime_filters_div.addTo(map);
+
+function crime_type_filter(crime_type_id){
+
+    var crime_data_url = "";
+    switch(crime_type_id){
+        case 'Homicide':
+            crime_data_url = "static/json/homicides.json";
+            $.getJSON(crime_data_url,function(data){
+                var crimes = L.geoJson(data,{
+                  pointToLayer: function(feature,latlng){
+                    var marker = L.marker(latlng);
+                    marker.bindPopup("<h6> District: " + feature.properties.District +
+                    "</h6><h6> Location: " + feature.properties.Location+"</h6><h6>Crime Type: "+ crime_type_id +"</h6>");
+                    return marker;
+                  }
+                });
+
+                var homicides = L.markerClusterGroup({showCoverageOnHover: false });
+                homicides.addLayer(crimes);
+                document.querySelector(".leaflet-pane .leaflet-marker-pane").innerHTML="";
+                map.addLayer(homicides);
+             });
+            break;
+
+        case 'Shooting':
+            crime_data_url = "static/json/shootings.json";
+            $.getJSON(crime_data_url,function(data){
+                var crimes = L.geoJson(data,{
+                  pointToLayer: function(feature,latlng){
+                    var marker = L.marker(latlng);
+                    marker.bindPopup("<h6> District: " + feature.properties.District +
+                    "</h6><h6> Location: " + feature.properties.Location+"</h6><h6>Crime Type: "+ crime_type_id +"</h6>");
+                    return marker;
+                  }
+                });
+
+                var shootings = L.markerClusterGroup({showCoverageOnHover: false });
+                shootings.addLayer(crimes);
+                document.querySelector(".leaflet-pane .leaflet-marker-pane").innerHTML="";
+                map.addLayer(shootings);
+            });
+            break;
+
+        case 'StreetRobbery':
+            crime_data_url = "static/json/street_robbery.json";
+            $.getJSON(crime_data_url,function(data){
+                var crimes = L.geoJson(data,{
+                  pointToLayer: function(feature,latlng){
+                    var marker = L.marker(latlng);
+                    marker.bindPopup("<h6> District: " + feature.properties.District +
+                    "</h6><h6> Location: " + feature.properties.Location+"</h6><h6>Crime Type: "+ crime_type_id +"</h6>");
+                    return marker;
+                  }
+                });
+
+                var street_robbery = L.markerClusterGroup({showCoverageOnHover: false });
+                street_robbery.addLayer(crimes);
+                document.querySelector(".leaflet-pane .leaflet-marker-pane").innerHTML="";
+                map.addLayer(street_robbery);
+            });
+            break;
+        case 'CommercialRobbery':
+            crime_data_url = "static/json/commercial_rob.json";
+            $.getJSON(crime_data_url,function(data){
+                var crimes = L.geoJson(data,{
+                  pointToLayer: function(feature,latlng){
+                    var marker = L.marker(latlng);
+                    marker.bindPopup("<h6> District: " + feature.properties.District +
+                    "</h6><h6> Location: " + feature.properties.Location+"</h6><h6>Crime Type: "+ crime_type_id +"</h6>");
+                    return marker;
+                  }
+                });
+
+                var commercial_rob = L.markerClusterGroup({showCoverageOnHover: false });
+                commercial_rob.addLayer(crimes);
+                document.querySelector(".leaflet-pane .leaflet-marker-pane").innerHTML="";
+                map.addLayer(commercial_rob);
+            });
+            break;
+
+        default:
+            crime_data_url = "static/json/homicides.json";
+            $.getJSON(crime_data_url,function(data){
+            var crimes = L.geoJson(data,{
+                  pointToLayer: function(feature,latlng){
+                    var marker = L.marker(latlng);
+                    marker.bindPopup("<h6> District: " + feature.properties.District +
+                    "</h6><h6> Location: " + feature.properties.Location+"</h6><h6>Crime Type: "+ crime_type_id +"</h6>");
+                    return marker;
+                  }
+                });
+
+                var homicides = L.markerClusterGroup({showCoverageOnHover: false });
+                homicides.addLayer(crimes);
+                document.querySelector(".leaflet-pane .leaflet-marker-pane").innerHTML="";
+                map.addLayer(homicides);
+            });
+    }
+
+     var inputs = document.querySelectorAll('input');
+        for(var i=0; i<inputs.length; i++){
+            if(inputs[i].id != crime_type_id){
+                inputs[i].checked = false;
+            }
+        }
 
 
-$.getJSON("static/json/homicides.json",function(data){
-    var crimes = L.geoJson(data,{
-      pointToLayer: function(feature,latlng){
-        var marker = L.marker(latlng);
-        marker.bindPopup("<h6> DISTRICT: " + feature.properties.District +
-        "</h6><h6> LOCATION: " + feature.properties.Location+"</h6>");
-        return marker;
-      }
-    });
-    var clusters = L.markerClusterGroup({showCoverageOnHover: false });
-    clusters.addLayer(crimes);
-    map.addLayer(clusters);
- });
+
+}
+
+
+
+

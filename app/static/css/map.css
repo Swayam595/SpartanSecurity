@@ -18,9 +18,16 @@
 }
 .crime_filters{
     margin-bottom: 60%!important;
+    background-color:white;
+    padding: 5%;
+    width: 200px;
+    opacity:0.9;
+    border-radius:2px;
 }
 .crime_filters label {
-    color: #ffffff;
+    color: black;
+    font-weight: bold;
+    margin-left:3px;
 }
 .info,.population_info {
     padding: 6px 8px;
