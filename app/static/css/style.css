@@ -1,20 +1,20 @@
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
 body{
     font-family: sans-serif;
 }
 .bg-dark{
-    padding: 5px 30px;
+    padding: 1px 30px;
     box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
 }
 .navbar-brand{
-    font-size:16px;
+    font-size:14px;
 }
 .navbar-dark .navbar-nav .nav-link{
     font-family: Sen, sans-serif;
     letter-spacing: 0.6px;
-    font-size:14px;
+    font-size:13px;
 }
 .banner{
     background-image: url(../images/news1.png);
@@ -33,6 +33,7 @@ body{
     font-weight:500;
     font-size: 75px;
     width:100%;
+    height:0;
 }
 .banner button{
     background-color:white;

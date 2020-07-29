@@ -7,8 +7,8 @@
 
 <div class="container-fluid">
     <div class="row banner">
-        <h1 class="banner-text">Collect. Analyze. Prevent</h1>
-        <div class="w-100 text-center mt-n5">
+        <div class="banner-text">Collect. Analyze. Prevent</div>
+        <div class="w-100 text-center">
             <a class="js-scroll" href="#about">
                 <button class="btn explore-btn">Explore</button>
             </a>
@@ -61,8 +61,6 @@ $(window).scroll(function(){
     $(".banner-text").css("opacity", 1 - $(window).scrollTop() / 250);
     $(".explore-btn").css("opacity", 1 - $(window).scrollTop() / 250);
 });
-
-
 
 </script>
 {% endblock %}
