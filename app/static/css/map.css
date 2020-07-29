@@ -8,31 +8,30 @@
     color: #ffffff;
     opacity:0.9;
 }
-.leaflet-control-container .title .leaflet-control{
+.title{
    color: black;
-   font-size: 17px;
    background: white;
    padding: 5px 14px;
-   border-radius: 5px;
+   border-radius: 2px;
    opacity: 0.9;
-   margin-top:20%;
+   margin-top:21%!important;
 }
 .crime_filters{
     margin-bottom: 60%!important;
 }
 .crime_filters label {
     color: #ffffff;
-    font-size: 20px;
 }
 .info,.population_info {
     padding: 6px 8px;
-    font: 14px/16px Arial, Helvetica, sans-serif;
+    font: 14px/14px Arial, Helvetica, sans-serif;
     background: white;
     background: rgba(255,255,255,0.8);
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 5px;
+    margin-top: 25%!important;
 }
-.info h4 ,.population_info h4{
+.info h5 ,.population_info h5{
     margin: 0 0 5px;
     color: #777;
 }

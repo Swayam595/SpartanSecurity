@@ -1,5 +1,5 @@
 var geojson;
-var map = L.map('mapid',{zoomControl:false}).setView([39.2904, -76.6122], 11.50);
+var map = L.map('mapid',{zoomControl:false}).setView([39.3110, -76.6122], 11.50);
 L.tileLayer('http://{s}.basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}.png').addTo(map);
 $.getJSON('static/json/neighborhood.json',function (data) {
        geojson = L.geoJson(data,{style:polystyle,onEachFeature: onEachFeature}).addTo(map);
@@ -70,9 +70,9 @@ info.onAdd = function (map) {
 
 // method that we will use to update the control based on feature properties passed
 info.update = function (props) {
-    this._div.innerHTML = '<h4>Baltimore Neighborhood </h4><b>Number of Crimes</b><br/>' +  (props ?
+    this._div.innerHTML = '<h5>Baltimore Neighborhood </h5><b>Number of Crimes</b><br/>' +  (props ?
         '<b>' + props.Name + '</b><br />' + props.NoOfCrimes + '</b><br />'+
-        '<br><h4>Population density</h4>'+
+        '<br><h5>Population density</h5>'+
         '<b>' + props.Name + '</b><br />' + props.Pop_dens
         : 'Hover over a state');
 };

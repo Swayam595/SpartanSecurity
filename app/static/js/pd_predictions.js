@@ -16,8 +16,8 @@ $.getJSON('static/json/pd_predictions.json',function (data) {
          },
        onEachFeature: function( feature, layer ){
 
-          layer.bindPopup( "<h6>" + feature.properties.Dist_Name +
-          " District</h6><h6> Number of crimes: " + feature.properties.NoOfCrimes+"</h6>")
+          layer.bindPopup( "<h7>" + feature.properties.Dist_Name +
+          " District</h7><h7> Number of crimes: " + feature.properties.NoOfCrimes+"</h7>")
         }
        }).addTo(map);
 });

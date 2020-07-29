@@ -1,8 +1,6 @@
 var geojson;
-var map = L.map('mapid',{zoomControl:false}).setView([39.2980, -76.6121], 11.50);
-//L.tileLayer('http://{s}.basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}.png').addTo(map);
+var map = L.map('mapid',{zoomControl:false}).setView([39.3110, -76.6121], 11.50);
 L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png').addTo(map);
-//L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
 $.getJSON('static/json/police_district.json',function (data) {
        geojson = L.geoJson(data,{style:function(feature){
@@ -19,8 +17,8 @@ $.getJSON('static/json/police_district.json',function (data) {
      },
 
      onEachFeature: function( feature, layer ){
-      layer.bindPopup( "<h6>" + feature.properties.dist_name +
-      " District</h6><h6> Number of crimes: " + feature.properties.noOfCrimes+"</h6>")
+      layer.bindPopup( "<h7>" + feature.properties.dist_name +
+      " District</h7><h7> Number of crimes: " + feature.properties.noOfCrimes+"</h7>")
     }}).addTo(map);
 });
 
@@ -52,7 +50,6 @@ legend.onAdd = function (map) {
 legend.addTo(map);
 
 var title = L.control({position: 'topleft'});
-
 title.onAdd = function (map) {
 
     var div = L.DomUtil.create('div', 'title');
