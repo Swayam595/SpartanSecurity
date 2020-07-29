@@ -87,7 +87,7 @@ function crime_type_filter(crime_type_id){
                   pointToLayer: function(feature,latlng){
                     var marker = L.marker(latlng);
                     marker.bindPopup("<h6> District: " + feature.properties.District +
-                    "</h6><h6> Location: " + feature.properties.Location+"</h6><h6>Crime Type: "+ crime_type_id +"</h6>");
+                    "</h6><h6> Location: " + feature.properties.Location+"</h6><h6>Crime: "+ crime_type_id +"</h6>");
                     return marker;
                   }
                 });
@@ -106,7 +106,7 @@ function crime_type_filter(crime_type_id){
                   pointToLayer: function(feature,latlng){
                     var marker = L.marker(latlng);
                     marker.bindPopup("<h6> District: " + feature.properties.District +
-                    "</h6><h6> Location: " + feature.properties.Location+"</h6><h6>Crime Type: "+ crime_type_id +"</h6>");
+                    "</h6><h6> Location: " + feature.properties.Location+"</h6><h6>Crime: "+ crime_type_id +"</h6>");
                     return marker;
                   }
                 });
@@ -125,7 +125,7 @@ function crime_type_filter(crime_type_id){
                   pointToLayer: function(feature,latlng){
                     var marker = L.marker(latlng);
                     marker.bindPopup("<h6> District: " + feature.properties.District +
-                    "</h6><h6> Location: " + feature.properties.Location+"</h6><h6>Crime Type: "+ crime_type_id +"</h6>");
+                    "</h6><h6> Location: " + feature.properties.Location+"</h6><h6>Crime: "+ crime_type_id +"</h6>");
                     return marker;
                   }
                 });
@@ -143,7 +143,7 @@ function crime_type_filter(crime_type_id){
                   pointToLayer: function(feature,latlng){
                     var marker = L.marker(latlng);
                     marker.bindPopup("<h6> District: " + feature.properties.District +
-                    "</h6><h6> Location: " + feature.properties.Location+"</h6><h6>Crime Type: "+ crime_type_id +"</h6>");
+                    "</h6><h6> Location: " + feature.properties.Location+"</h6><h6>Crime: "+ crime_type_id +"</h6>");
                     return marker;
                   }
                 });
@@ -162,7 +162,7 @@ function crime_type_filter(crime_type_id){
                   pointToLayer: function(feature,latlng){
                     var marker = L.marker(latlng);
                     marker.bindPopup("<h6> District: " + feature.properties.District +
-                    "</h6><h6> Location: " + feature.properties.Location+"</h6><h6>Crime Type: "+ crime_type_id +"</h6>");
+                    "</h6><h6> Location: " + feature.properties.Location+"</h6><h6>Crime: "+ crime_type_id +"</h6>");
                     return marker;
                   }
                 });

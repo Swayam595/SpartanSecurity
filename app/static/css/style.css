@@ -65,7 +65,6 @@ body{
 }
 .news-banner .col{
     min-height: 300px;
-    color: #fff;
     font-weight: bold;
     font-size:22px ;
     padding-top:8%;
@@ -76,6 +75,10 @@ body{
     background-image:url(../images/news1.png);
     background-size:cover;
 
+}
+.news-banner .col a{
+   color: white;
+   text-decoration: none;
 }
 .news-banner-text{
     width:100%;
