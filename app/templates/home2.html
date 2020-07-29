@@ -8,9 +8,13 @@
 <div class="container-fluid">
     <div class="row banner">
         <h1 class="banner-text">Collect. Analyze. Prevent</h1>
-        <a class="js-scroll" href="#about"><button class="btn explore-btn">Explore</button></a>
+        <div class="w-100 text-center mt-n5">
+            <a class="js-scroll" href="#about">
+                <button class="btn explore-btn">Explore</button>
+            </a>
+        </div>
     </div>
-    <div class="about row px-5 my-5" id="about">
+    <div class="about row px-5 py-5" id="about">
         <div class="col">
             <img class="home-map-img" src="../static/images/mainpic.png">
         </div>
@@ -57,21 +61,7 @@ $(window).scroll(function(){
     $(".banner-text").css("opacity", 1 - $(window).scrollTop() / 250);
     $(".explore-btn").css("opacity", 1 - $(window).scrollTop() / 250);
 });
-$(document).ready(function(){
-    $(".js-scroll").on('click', function(event) {
 
-        if (this.hash !== "") {
-          event.preventDefault();
-          var hash = this.hash;
-
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top
-          }, 800, function(){
-             window.location.hash = hash;
-          });
-        }
-    });
-}
 
 
 </script>

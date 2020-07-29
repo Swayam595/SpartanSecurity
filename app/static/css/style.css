@@ -28,16 +28,13 @@ body{
 .banner-text{
     text-align: center;
     color: white;
-    position: absolute;
-    top: 45%;
-    width: 100%;
+    margin: 0 auto;
+    margin-top: 235px;
     font-weight:500;
     font-size: 75px;
+    width:100%;
 }
 .banner button{
-    position: absolute;
-    top: 65%;
-    left: 47%;
     background-color:white;
 }
 .about-text{
