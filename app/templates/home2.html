@@ -1,7 +1,7 @@
 {% extends 'navbar.html' %}
 
 {% block scriptcontent %}
-    <link rel="stylesheet" href="static/css/style.css"/>
+<link rel="stylesheet" href="static/css/style.css" />
 {% endblock %}
 {% block bodycontent %}
 
@@ -37,7 +37,8 @@
             <h2 class="news-banner-text text-center">News Feed</h2>
             <div class="news-content row w-100">
                 <div class="col">
-                    <a href="https://www.nbcwashington.com/news/local/is-crime-reduction-worth-aerial-surveillance-baltimore-board-says-yes/2261090/">
+                    <a
+                        href="https://www.nbcwashington.com/news/local/is-crime-reduction-worth-aerial-surveillance-baltimore-board-says-yes/2261090/">
                         Is Crime Reduction Worth Aerial Surveillance</a>
                 </div>
                 <div class="col">
@@ -45,22 +46,24 @@
                         Baltimore Homicides</a>
                 </div>
                 <div class="col">
-                    <a href="https://thecrimereport.org/2020/06/30/despite-pandemic-baltimore-murder-total-is-rising/">Despite Pandemic, Baltimore Murder Total is Rising
+                    <a href="https://thecrimereport.org/2020/06/30/despite-pandemic-baltimore-murder-total-is-rising/">Despite
+                        Pandemic, Baltimore Murder Total is Rising
                     </a>
                 </div>
 
             </div>
         </div>
     </div>
-    <footer class="row py-5 px-3">
-        &copy; 2020 Spartan Security. All Rights Reserved.
+    <footer class="page-footer font-small blue">
+        <div class="footer-copyright text-center py-3">© 2020 Spartan Security. All Rights Reserved.
+        </div>
     </footer>
 </div>
 <script type="text/javascript">
-$(window).scroll(function(){
-    $(".banner-text").css("opacity", 1 - $(window).scrollTop() / 250);
-    $(".explore-btn").css("opacity", 1 - $(window).scrollTop() / 250);
-});
+    $(window).scroll(function () {
+        $(".banner-text").css("opacity", 1 - $(window).scrollTop() / 250);
+        $(".explore-btn").css("opacity", 1 - $(window).scrollTop() / 250);
+    });
 
 </script>
 {% endblock %}
