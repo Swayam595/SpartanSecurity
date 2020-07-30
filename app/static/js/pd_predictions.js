@@ -17,7 +17,7 @@ $.getJSON('static/json/pd_predictions.json',function (data) {
        onEachFeature: function( feature, layer ){
 
           layer.bindPopup( "<h7>" + feature.properties.Dist_Name +
-          " District</h7><h7> Number of crimes: " + feature.properties.NoOfCrimes+"</h7>")
+          " District</h7><br/><h7> Number of crimes: " + feature.properties.NoOfCrimes+"</h7>")
         }
        }).addTo(map);
 });
