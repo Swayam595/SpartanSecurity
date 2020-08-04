@@ -52,7 +52,6 @@ legend.addTo(map);
 /*Map title*/
 var title = L.control({position: 'topleft'});
 title.onAdd = function (map) {
-
     var div = L.DomUtil.create('div', 'title');
     div.innerHTML += "<strong>Total Number of Crimes in Baltimore Police Districts</strong>";
     return div;
@@ -65,9 +64,10 @@ crime_filters_div.onAdd = function (map) {
     var div = L.DomUtil.create('form', 'crime_filters');
     var labels =['Homicides','Shootings','Robbery - Street', 'Robbery - Commercial'];
     var ids = ['Homicide','Shooting','StreetRobbery','CommercialRobbery'];
-    div.innerHTML += "<h6><strong>Select for exact locations of crime</strong></h6>"
+    div.innerHTML += "<h6><strong>View CCTV camera locations</strong></h6><input type = 'radio' id='cameras' onchange='camera_filter(this.id)'><label>&nbsp CCTV cameras</label></br>"
+    div.innerHTML += "</br><h6><strong>Filter by Crime Type</strong></h6>"
     for(var i=0; i< labels.length && i < ids.length; i++){
-        div.innerHTML += "</br><input type='checkbox' id="+ ids[i] +" onchange='crime_type_filter(this.id)'><label>&nbsp"+
+        div.innerHTML += "</br><input type='radio' id="+ ids[i] +" onchange='crime_type_filter(this.id)'><label>&nbsp"+
         labels[i]+"<label>";
     }
 
@@ -124,9 +124,32 @@ function crime_type_filter(crime_type_id){
             inputs[i].checked = false;
         }
     }
+}
 
 
+function camera_filter(id){
+    $.getJSON("static/json/cctv_cameras.json",function(data){
+        var cameras = L.geoJson(data,{
+              pointToLayer: function(feature,latlng){
+                var marker = L.marker(latlng);
+                marker.bindPopup("<h6> Camera Location: " + feature.properties.name +
+                "</h6>");
+                return marker;
+              }
+            });
 
+            var cluster = L.markerClusterGroup({showCoverageOnHover: false });
+            cluster.addLayer(cameras);
+            document.querySelector(".leaflet-pane .leaflet-marker-pane").innerHTML="";
+            map.addLayer(cluster);
+        });
+        var inputs = document.querySelectorAll('input');
+
+        for(var i=0; i<inputs.length; i++){
+            if(inputs[i].id != id){
+                inputs[i].checked = false;
+            }
+        }
 }
 
 

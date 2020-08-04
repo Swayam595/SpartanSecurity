@@ -7,8 +7,8 @@ application = app = Flask(__name__)
 # manager = ModelManager()
 
 @app.route('/')
-def newhome():
-    return render_template('home2.html')
+def home():
+    return render_template('home.html')
 
 @app.route('/intersection')
 def intersection():
