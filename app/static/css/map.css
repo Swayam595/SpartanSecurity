@@ -14,9 +14,9 @@
    padding: 5px 14px;
    border-radius: 2px;
    opacity: 0.9;
-   margin-top:21%!important;
+   margin-top:23%!important;
 }
-.crime_filters{
+.crime_filters,.census_filter{
     margin-bottom: 60%!important;
     background-color:white;
     padding: 5%;
@@ -24,7 +24,7 @@
     opacity:0.9;
     border-radius:2px;
 }
-.crime_filters label {
+.crime_filters label ,.census_filter label{
     color: black;
     font-weight: bold;
     margin-left:3px;
@@ -53,4 +53,8 @@
     float: left;
     margin-right: 8px;
     opacity: 0.7;
+}
+.census .title{
+    width: 300px;
+    margin-top: 25%!important;
 }

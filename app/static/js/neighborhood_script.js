@@ -70,11 +70,8 @@ info.onAdd = function (map) {
 
 // method that we will use to update the control based on feature properties passed
 info.update = function (props) {
-    this._div.innerHTML = '<h5>Baltimore Neighborhood </h5><b>Number of Crimes</b><br/>' +  (props ?
-        '<b>' + props.Name + '</b><br />' + props.NoOfCrimes + '</b><br />'+
-        '<br><h5>Population density</h5>'+
-        '<b>' + props.Name + '</b><br />' + props.Pop_dens
-        : 'Hover over a state');
+    this._div.innerHTML = '<h5>Baltimore Neighborhood </h5><b>Number of Crimes</b><br/>' +
+    (props ? '<br/><b>' + props.Name + '</b><br/>' + Math.floor(props.NoOfCrimes) + '</b><br />' : 'Hover over a state');
 };
 
 info.addTo(map);

@@ -24,6 +24,11 @@ def predictive_analytics():
     return render_template('predictive_analytics.html')
 
 
+@app.route('/predwithcensus')
+def predictive_census():
+    return render_template('predictive_with_census.html')
+
+
 @app.route('/crimesbyneighborhood')
 def neighborhood_analytics():
     return render_template('neighborhood_analytics.html')

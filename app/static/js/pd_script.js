@@ -18,7 +18,10 @@ $.getJSON('static/json/police_district.json',function (data) {
 
      onEachFeature: function( feature, layer ){
       layer.bindPopup( "<h7>" + feature.properties.dist_name +
-      " District</h7><br/><h7> Number of crimes: " + feature.properties.noOfCrimes+"</h7>")
+      " District</h7><br/><h7> Number of crimes: " + feature.properties.noOfCrimes+"</h7>");
+       layer.on('mouseover', function (e) {
+            this.openPopup();
+        });
     }}).addTo(map);
 });
 
@@ -143,8 +146,8 @@ function camera_filter(id){
             document.querySelector(".leaflet-pane .leaflet-marker-pane").innerHTML="";
             map.addLayer(cluster);
         });
-        var inputs = document.querySelectorAll('input');
 
+        var inputs = document.querySelectorAll('input');
         for(var i=0; i<inputs.length; i++){
             if(inputs[i].id != id){
                 inputs[i].checked = false;
