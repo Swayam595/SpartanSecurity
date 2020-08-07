@@ -10,6 +10,7 @@ To run the web application:
 python application.py
 ```
 ***Project Elevator Pitch***
+
 Link: https://www.youtube.com/watch?v=j4bc2ijzLow
 
 ***Project Video***
