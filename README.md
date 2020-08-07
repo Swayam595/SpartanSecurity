@@ -3,6 +3,9 @@ Spartan Security is a web application that provides predictive and descriptive a
 
 The application provides interactive maps with filters for different crime types and CCTV camera locations. In addition, descriptive analytics section has charts and maps describing crime patterns in Baltimore neighborhoods and police district.
 
+The city of Baltimore is divided into 9 Police districts.
+
+The system is divided into Machine Learning and Web Application.
 
 To run the web application:
 > Navigate to  app folder and run 
