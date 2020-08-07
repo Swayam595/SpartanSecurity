@@ -11,8 +11,7 @@ python application.py
 ```
 ***Project Elevator Pitch***
 
-Link: https://www.youtube.com/watch?v=j4bc2ijzLow
-
+Link: https://www.youtube.com/watch?v=j4bc2ijzLow&feature=youtu.be
 ***Project Video***
 
 Link: https://www.youtube.com/watch?v=dSKRX62Y1vA
