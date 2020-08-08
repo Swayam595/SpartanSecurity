@@ -3,3 +3,4 @@ Future work consists of the following:
 2. Using Vector tiles for accurate mapping.
 3. Poisson distribuiton for crimes which occur sparsely.
 4. Collecting twitter data to map to location of crime.
+5. Finding the distance between CCTV and crimes.
