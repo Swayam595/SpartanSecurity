@@ -1,0 +1,6 @@
+Future work consists of the following:
+1. Finding location of Cell phone towers/ wifi hotspots to calculate population based on number of connections the cell tower can handle.
+2. Using Vector tiles for accurate mapping.
+3. Poisson distribuiton for crimes which occur sparsely.
+4. Collecting twitter data to map to location of crime.
+5. Finding the distance between CCTV and crimes.
